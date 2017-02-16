@@ -1,6 +1,6 @@
-import touchripple from './touchripple'
+var touchripple = require('./touchripple')
 
-const GetCurrentStyle = function(obj, attr) {
+var GetCurrentStyle = function(obj, attr) {
     if (obj.currentStyle) {
         return obj.currentStyle[attr]
     } else {
@@ -8,10 +8,10 @@ const GetCurrentStyle = function(obj, attr) {
     }
 }
 
-const directive = {
-    bind(el) {
+var directive = {
+    bind: function (el) {
+
         var element = this ? (this.el ? this.el : el) : el
-        // console.log(element)
 
         if (element) {
             var ripple = document.createElement('div')
@@ -23,11 +23,11 @@ const directive = {
         }
     },
 
-    update(value) {
+    update: (value) =>  {
         // console.log(value)
     },
 
-    unbind(el) {
+    unbind: function (el) {
         var element = this ? (this.el ? this.el : el) : el
 
         if (element) {
