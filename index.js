@@ -1,24 +1,21 @@
- /**
+import directive from './directive.js'
+import component from './component.vue'
+
+/**
  *
  * Vue-touch-ripple
  * Adapted from rippleJS (https://github.com/samthor/rippleJS)
- * removed jQuery
- *
  */
-
-const directive = require('./directive.js')
-const component = require('./component.vue')
-
 const vueTouchRipple = {
-  touchRipple: component,
-  install: function(Vue) {
+    touchRipple: component,
+    install(Vue) {
 
-    // component
-    Vue.component('touch-ripple', component)
+        // component
+        Vue.component('touch-ripple', component)
 
-    // directive
-    Vue.directive('touch-ripple', directive)
-  }
+        // directive
+        Vue.directive('touch-ripple', directive)
+    }
 }
 
 module.exports = vueTouchRipple
