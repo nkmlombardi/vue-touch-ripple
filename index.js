@@ -8,7 +8,7 @@ import component from './component.vue'
  */
 const vueTouchRipple = {
     touchRipple: component,
-    install(Vue) {
+    install: (Vue) => {
 
         // component
         Vue.component('touch-ripple', component)
